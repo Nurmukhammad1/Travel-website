@@ -1,0 +1,85 @@
+.mobile-nav-overlay{
+    opacity: 0;
+    z-index: 99;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0, 0.5);
+    pointer-events: none;
+    transition: all 0.4s ease-in;
+}
+
+.mobile-nav-overlay--open{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-nav{
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translate(100%, 0%);
+
+    height: 100vh;
+    width: 27.5rem;
+    padding: 5rem 3.75rem 2.5rem;
+    background: #000000;
+
+    transition: transform 0.4s ease-in;
+
+    @media (max-width: 48rem){
+        width: 20rem;
+        padding: 2.5rem 1.87rem 0;
+    }
+
+    @media (max-width: 17.5rem){
+        width: 100%;
+    }
+}
+
+.mobile-nav--open{
+    transform: translate(0%, 0%);
+}
+
+.mobile-nav__btn{
+    position: absolute;
+    top: 1.87rem;
+    right: 3.1rem;
+    width: 3rem;
+    height: 3rem;
+
+    @media (max-width:48rem){
+        top: 1.8rem;
+        right: 1.25rem;
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+
+}
+
+.mobile-nav__list{
+    font-size: 1.3rem;
+
+    @media (max-width:48rem){
+        font-size: 1.12rem;
+    }
+    li{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    a{
+        display: block;
+        padding: 1.8rem;
+        transition: all 0.2s ease-in;
+
+        @media (max-width:48rem){
+            padding: 0.9rem 0;
+        }
+        &:hover{
+            padding-left: 1.25rem;
+        }
+    }
+}
